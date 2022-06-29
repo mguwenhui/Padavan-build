@@ -1,5 +1,4 @@
 name: Build Newifi-d1 from vb1980 kvr repo
-
 on: 
   workflow_dispatch:
     inputs:
