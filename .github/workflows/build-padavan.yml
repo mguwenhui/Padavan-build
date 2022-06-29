@@ -1,5 +1,6 @@
 #修改TNAME:  K2P-5.0 中的K2P-5.0为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build 860M-5.0.5.1_Padavan
+#name: Build 860M-5.0.5.1_Padavan
+name: Build Newifi_D1_Padavan
 
 on: 
   release:
@@ -32,13 +33,13 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/mguwenhui/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/mguwenhui/Padavan-KVR-vb1980.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: JCG-AC860M
+        TNAME: NEWIFI-D1
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
